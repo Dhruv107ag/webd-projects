@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync Landing Page</title>
+  <style>
+    :root { font-size: 16px; }
+    html { scroll-behavior: smooth; }
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body { width: 100%; height: 100%; overflow-x: hidden; }
+
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .image img { width: 6.25rem; height: 5rem; }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.625rem;
+      padding: 1.25rem;
+      height: 9.375rem;
+    }
+
+    .bookmark, .contactus {
+      display: none;
+      gap: 1.875rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: grey;
+      font-size: 1.6rem;
+    }
+
+    .contactus {
+      border: 1px solid rgb(43, 43, 131);
+      border-radius: 1.25rem;
+      height: 3.75rem;
+      width: 11.875rem;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(43, 43, 131);
+    }
+
+    #contact { color: white; }
+
+    @media screen and (min-width: 48rem) {
+      .bookmark, .contactus { display: flex; }
+    }
+
+    @media screen and (max-width: 48rem) {
+      .heading, .main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .main {
+      display: flex;
+      padding: 7.5rem;
+      gap: 6.25rem;
+    }
+
+    .rightside img {
+      width: 34.375rem;
+      height: 37.5rem;
+      border: 0.125rem solid white;
+      border-radius: 1.25rem;
+    }
+
+    .leftside {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .animation h3 { color: rgb(43, 43, 131); }
+
+    .animation h1 {
+      font-size: 3rem;
+      position: relative;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      gap: 3.125rem;
+      border-radius: 0.625rem;
+    }
+
+    form button {
+      width: 6rem;
+      height: 1.625rem;
+      color: white;
+      background-color: rgb(43, 43, 131);
+      border: 0.125rem solid rgb(43, 43, 131);
+      border-radius: 0.25rem;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      display: flex;
+      width: 36.25rem;
+      gap: 1.875rem;
+      background-color: rgb(190, 188, 188);
+      border-radius: 2.5rem;
+      height: 6.25rem;
+      padding: 0.625rem;
+      margin: 0.625rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 1rem;
+      color: grey;
+    }
+
+    .item img {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+
+    .last {
+      margin-left: 13.75rem;
+      margin-right: 18.75rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      width: 70vw;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      height: 12.5rem;
+    }
+
+    .last h1 { color: rgb(43, 43, 131); font-size: 2.5rem; }
+    .last p {
+      color: rgb(72, 72, 72);
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.875rem;
+      row-gap: 1.25rem;
+      margin-left: 23.125rem;
+      margin-right: 21.875rem;
+    }
+
+    .item1 {
+      border-radius: 1.875rem;
+      width: 18.75rem;
+      height: 9.375rem;
+      display: grid;
+      place-items: center;
+      margin: auto;
+      padding: 0.625rem;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .item1:hover { transform: scale(1.2); }
+
+    .item1 img {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 3.125rem;
+    }
+
+    .item1 h1 { font-size: 1rem; }
+    .item1 p {
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    #a { background-color: rgb(78, 78, 230); }
+    #b { background-color: rgb(227, 134, 149); }
+    #c { background-color: rgb(255, 153, 0); }
+    #d { background-color: palegreen; }
+    #e { background-color: rgb(12, 113, 12); }
+    #f { background-color: rgb(104, 14, 146); }
+
+    .hehe {
+      background-color: rgb(179, 176, 176);
+      height: 56.25rem;
+    }
+
+    #ani {
+      opacity: 0;
+      animation: image 3s ease-in forwards;
+    }
+
+    @keyframes image {
+      from { opacity: 0; transform: translateY(-1.875rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .testimonial img {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 2.5rem;
+    }
+
+    .testi {
+      display: flex;
+      align-items: center;
+      padding: 6.25rem;
+      margin: 2.5rem;
+      gap: 2.5rem;
+    }
+
+    .testimonial {
+      border: 1px solid black;
+      border-radius: 0.625rem;
+      width: 25rem;
+      height: 12.5rem;
+      text-align: center;
+      padding: 1.25rem;
+      background-color: rgb(78, 0, 78);
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover { transform: scale(1.2); }
+    .chomu h1 { text-align: center; margin-top: 3.75rem; }
+    .testimonial p {
+      color: white;
+      font-weight: bold;
+    }
+
+    .form { display: flex; width: 100vw; }
+    .rhs {
+      background-color: rgb(176, 176, 176);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      width: 40vw;
+    }
+
+    .rhs h1 { color: rgb(43, 43, 131); }
+
+    .lili {
+      text-align: center;
+      margin-left: 23rem;
+      gap: 0.5rem;
+    }
+
+    .lili #submit {
+      background-color: rgb(6, 6, 213);
+      color: white;
+      width: 2.5rem;
+    }
+
+    .ni {
+      margin-left: 3rem;
+      text-align: center;
+    }
+
+    .ni a {
+      text-decoration: underline;
+      color: rgb(32, 32, 186);
+      font-size: 16px;
+    }
+
+    .lhs {
+      margin-left: 10rem;
+      height: 20.85rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 19px;
+      color: black;
+      background-color: rgb(151, 151, 151);
+      margin-top: 5rem;
+    }
+
+    .animation {
+      opacity: 0;
+      animation: move 1.5s ease-out forwards;
+    }
+
+    @keyframes move {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="chatgpt" id="ani">
+        <h1>ChatGPT</h1>
+      </div>
+      <div class="bookmark">
+        <a href="#Home">Home</a>
+        <a href="#Features">Features</a>
+        <a href="#Pricing">Pricing</a>
+        <a href="#blog">Blog</a>
+        <a href="#About">About</a>
+      </div>
+      <div class="contactus">
+        <a href="#Contact" id="contact">Contact us</a>
+      </div>
+    </div>
+
+    <div class="main" id="Home">
+      <div class="leftside">
+        <div>
+          <h3 class="animation">Very proud to introduce</h3><br><br>
+          <h1 class="animation">Seamless Learning for Brighter Futures</h1><br>
+          <p>Our innovative platform offers an effortless and seamless approach to learning...</p>
+        </div>
+        <div class="butoon">
+          <form>
+            <button type="submit">Start now</button>
+            <button type="submit">Take tour</button>
+          </form>
+        </div>
+      </div>
+      <div class="rightside">
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Beautiful Scenery" id="ani">
+      </div>
+    </div>
+
+    <div class="footer" id="Features">
+      <h1 class="animation">Trusted by the best</h1><br><br>
+      <div class="box animation">
+        <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt=""><span>Google</span></div>
+        <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt=""><span>LinkedIn</span></div>
+        <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt=""><span>Microsoft</span></div>
+        <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt=""><span>Vector Edge</span></div>
+      </div>
+    </div>
+
+    <div class="hehe" id="Pricing">
+      <div class="last">
+        <h1>Our Competitive Advantage</h1>
+        <p>This is a section of some simple filler text. It shares some characteristics...</p>
+      </div>
+
+      <div class="grid">
+        <div class="item1" id="a"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><h1>Personalized Learning</h1><p>Offer tailored experiences...</p></div>
+        <div class="item1" id="b"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><h1>Affordability</h1><p>Provide high-quality education...</p></div>
+        <div class="item1" id="c"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><h1>Industry Partnerships</h1><p>Collaborate with institutions...</p></div>
+        <div class="item1" id="d"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><h1>Technology</h1><p>Use cutting-edge tools...</p></div>
+        <div class="item1" id="e"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><h1>Support</h1><p>Offer top-notch support...</p></div>
+        <div class="item1" id="f"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><h1>Responsive Support</h1><p>Help both students and teachers...</p></div>
+      </div>
+    </div>
+
+    <div class="chomu" id="blog">
+      <h1>What others say about us</h1>
+      <div class="testi">
+        <div class="testimonial">
+          <p>"StudySync revolutionized my classroom..."</p>
+          <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><p>Dhruv Agrawal</p><p>Teacher</p>
+        </div>
+        <div class="testimonial animation">
+          <p>"StudySync transformed our family's learning journey..."</p>
+          <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><p>Radhika Agrawal</p><p>Student</p>
+        </div>
+        <div class="testimonial animation">
+          <p>"StudySync, a true game-changer..."</p>
+          <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><p>Ashutosh Agrawal</p><p>Parent</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form" id="About">
+      <div class="lhs">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Mountain" width="500" id="ani">
+      </div>
+      <div class="rhs">
+        <h1>Get the latest update here</h1>
+        <p>Sign up for the newsletter</p>
+        <form class="lili">
+          <input type="text" id="email" placeholder="enter your email here">
+          <input type="submit" value="Send" id="submit">
+        </form>
+        <p class="ni">By signing up you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2021–Present StudySync. All rights reserved</p>
+    </footer>
+  </div>
+</body>
+</html>
