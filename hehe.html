@@ -60,11 +60,90 @@
       .bookmark, .contactus { display: flex; }
     }
 
+    /* ✅ Improved responsiveness starts here */
     @media screen and (max-width: 48rem) {
-      .heading, .main {
+      .heading {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        gap: 1rem;
+      }
+
+      .bookmark, .contactus {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .main {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+      }
+
+      .rightside img {
+        width: 100%;
+        height: auto;
+      }
+
+      .leftside {
+        align-items: center;
+      }
+
+      .box {
+        flex-direction: column;
+        width: 90%;
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: auto;
+        row-gap: 1rem;
+      }
+
+      .testi {
+        flex-direction: column;
+        padding: 2rem;
+        margin: 1rem;
+        gap: 2rem;
+      }
+
+      .testimonial {
+        width: 90%;
+      }
+
+      .form {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .lhs,
+      .rhs {
+        margin-left: 0;
+        width: 90%;
+        align-items: center;
+      }
+
+      .rhs form {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      .lili {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      footer {
+        padding: 1rem;
+        font-size: 1rem;
       }
     }
 
@@ -123,11 +202,12 @@
       gap: 1.875rem;
       background-color: rgb(190, 188, 188);
       border-radius: 2.5rem;
-      height: 6.25rem;
+      height: auto;
       padding: 0.625rem;
       margin: 0.625rem;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .item {
@@ -144,17 +224,15 @@
     }
 
     .last {
-      margin-left: 13.75rem;
-      margin-right: 18.75rem;
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: start;
-      width: 70vw;
+      width: 100%;
       gap: 1.25rem;
       flex-wrap: wrap;
-      height: 12.5rem;
+      height: auto;
     }
 
     .last h1 { color: rgb(43, 43, 131); font-size: 2.5rem; }
@@ -209,7 +287,8 @@
 
     .hehe {
       background-color: rgb(179, 176, 176);
-      height: 56.25rem;
+      height: auto;
+      padding-bottom: 2rem;
     }
 
     #ani {
@@ -234,27 +313,30 @@
       padding: 6.25rem;
       margin: 2.5rem;
       gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .testimonial {
       border: 1px solid black;
       border-radius: 0.625rem;
       width: 25rem;
-      height: 12.5rem;
+      height: auto;
       text-align: center;
       padding: 1.25rem;
       background-color: rgb(78, 0, 78);
       transition: transform 0.3s ease;
+      color: white;
     }
 
     .testimonial:hover { transform: scale(1.2); }
     .chomu h1 { text-align: center; margin-top: 3.75rem; }
-    .testimonial p {
-      color: white;
-      font-weight: bold;
+
+    .form {
+      display: flex;
+      width: 100vw;
     }
 
-    .form { display: flex; width: 100vw; }
     .rhs {
       background-color: rgb(176, 176, 176);
       display: flex;
@@ -385,11 +467,11 @@
           <p>"StudySync revolutionized my classroom..."</p>
           <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><p>Dhruv Agrawal</p><p>Teacher</p>
         </div>
-        <div class="testimonial animation">
+        <div class="testimonial ">
           <p>"StudySync transformed our family's learning journey..."</p>
           <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><p>Radhika Agrawal</p><p>Student</p>
         </div>
-        <div class="testimonial animation">
+        <div class="testimonial">
           <p>"StudySync, a true game-changer..."</p>
           <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt=""><p>Ashutosh Agrawal</p><p>Parent</p>
         </div>
