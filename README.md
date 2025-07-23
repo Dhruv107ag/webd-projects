@@ -18,4 +18,3 @@ A task manager with local storage, dark theme, and complete/delete features.
 ### 3. 🏞️ Scenery Website
 A static website showcasing beautiful natural scenery using HTML and CSS. Great for learning layout, positioning, and visual design.
 - [Live Demo](#)
-- Files: `scenery.html`, `scenery.css` (or whatever the actual file names are)
