@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 text-white w-screen h-full m-0 p-0 font-serif">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center w-full h-16 px-6">
+    <h1 class="text-white font-bold text-3xl">WFA.</h1>
+
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex flex-col items-center justify-center px-4">
+
+    <!-- Main Image with animation -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Hopetoun_falls.jpg/640px-Hopetoun_falls.jpg" 
+         class="w-[500px] h-auto rounded-3xl border-4 border-white m-9 shadow-xl shadow-black transition-transform duration-700 ease-in-out hover:scale-105 hover:rotate-1"
+         alt="Nature Image" />
+
+    <!-- Heading -->
+    <h2 class="m-6 text-5xl md:text-7xl p-4 text-center">Let's Switch To Remote</h2>
+
+    <!-- Description -->
+    <p class="text-xl md:text-3xl text-center max-w-3xl mb-12">
+      WFA provides top-notch office spaces in prime locations worldwide allowing people to work from anywhere.
+      We provide coworking spaces where people from various backgrounds like remote workers, entrepreneurs,
+      freelancers, and startup enthusiasts can work, connect, and grow their businesses.
+    </p>
+
+    <!-- Search Form -->
+    <form class="w-full flex justify-center mb-16">
+      <div class="flex flex-col sm:flex-row gap-4 items-center">
+        <input type="text" placeholder="Enter The City"
+               class="text-black px-4 py-2 rounded-lg w-80 outline-none" />
+        <button class="bg-blue-950 text-white px-6 py-2 rounded-lg hover:bg-blue-900 transition duration-300">
+          Search Your Office
+        </button>
+      </div>
+    </form>
+
+    <!-- Company Logos with hover animation -->
+    <div class="text-center mb-16">
+      <h2 class="text-2xl font-semibold mb-6">Used by these companies</h2>
+      <ul class="flex flex-wrap justify-center items-center gap-10 text-white">
+
+        <li class="flex flex-col items-center transition-transform duration-500 ease-in-out hover:scale-110">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+               alt="Apple Logo" class="w-10 h-auto" />
+          <span class="text-base mt-2">Apple</span>
+        </li>
+
+        <li class="flex flex-col items-center transition-transform duration-500 ease-in-out hover:scale-110">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+               alt="Amazon Logo" class="w-24 h-auto" />
+          <span class="text-base mt-2">Amazon</span>
+        </li>
+
+        <li class="flex flex-col items-center transition-transform duration-500 ease-in-out hover:scale-110">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg"
+               alt="Airbnb Logo" class="w-16 h-auto" />
+          <span class="text-base mt-2">Airbnb</span>
+        </li>
+
+      </ul>
+    </div>
+
+  </main>
+</body>
+</html>
